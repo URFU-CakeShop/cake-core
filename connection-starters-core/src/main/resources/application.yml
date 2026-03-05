@@ -1,0 +1,19 @@
+cake:
+  kafka:
+    streams:
+      application-id: order-streams
+      bootstrap-servers: localhost:9092
+      num-stream-threads: 3
+      state-dir: /tmp/kafka-streams
+      topology-logging: true
+
+      retry:
+        max-attempts: 3
+        backoff-ms: 1000
+
+      dlq:
+        enable: true
+        topic-suffix: ".DLQ"
+
+      metrics:
+        enable: true
