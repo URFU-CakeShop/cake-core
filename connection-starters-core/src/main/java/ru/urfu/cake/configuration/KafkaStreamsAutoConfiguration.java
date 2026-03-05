@@ -8,6 +8,7 @@ import org.springframework.kafka.annotation.EnableKafkaStreams;
 import org.springframework.kafka.config.KafkaStreamsConfiguration;
 import org.springframework.kafka.config.StreamsBuilderFactoryBean;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.ProducerFactory;
 import ru.urfu.cake.dlq.DeadLetterPublisher;
 import ru.urfu.cake.handler.LoggingDeserializationExceptionHandler;
 import ru.urfu.cake.properties.KafkaStreamsProperties;
@@ -31,7 +32,7 @@ public class KafkaStreamsAutoConfiguration {
     }
 
     @Bean
-    public KafkaTemplate<String, String> kafkaTemplate(org.springframework.kafka.core.ProducerFactory<String, String> producerFactory) {
+    public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory<String, String> producerFactory) {
         return new KafkaTemplate<>(producerFactory);
     }
 
