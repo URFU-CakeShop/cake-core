@@ -28,6 +28,7 @@ public class DeadLetterPublisher {
      * @param headers     заголовки
      * @param exception   ошибка, которая произошла
      */
+
     public void publish(String topic, String key, String value, Headers headers, Exception exception) {
         String dlqTopic = topic + ".DLQ";
 
