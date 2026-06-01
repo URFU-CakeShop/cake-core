@@ -1,4 +1,4 @@
-package ru.urfu.cake.dlq;
+package ru.urfu.cake.core.dlq;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.header.Headers;

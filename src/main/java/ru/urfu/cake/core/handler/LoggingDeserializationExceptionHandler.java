@@ -1,4 +1,4 @@
-package ru.urfu.cake.handler;
+package ru.urfu.cake.core.handler;
 
 import lombok.Setter;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -6,7 +6,7 @@ import org.apache.kafka.streams.errors.DeserializationExceptionHandler;
 import org.apache.kafka.streams.processor.ProcessorContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.urfu.cake.dlq.DeadLetterPublisher;
+import ru.urfu.cake.core.dlq.DeadLetterPublisher;
 
 
 import java.util.Map;

@@ -1,4 +1,4 @@
-package ru.urfu.cake.serde;
+package ru.urfu.cake.core.serde;
 
 import org.apache.kafka.common.serialization.Serdes;
 import org.springframework.kafka.support.serializer.JsonDeserializer;

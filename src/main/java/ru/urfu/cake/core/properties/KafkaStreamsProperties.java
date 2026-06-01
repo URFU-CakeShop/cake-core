@@ -1,4 +1,4 @@
-package ru.urfu.cake.properties;
+package ru.urfu.cake.core.properties;
 
 import lombok.Getter;
 import lombok.Setter;

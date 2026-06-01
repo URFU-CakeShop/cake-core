@@ -1,4 +1,4 @@
-package ru.urfu.cake.configuration;
+package ru.urfu.cake.core.configuration;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -12,9 +12,9 @@ import org.springframework.kafka.config.StreamsBuilderFactoryBean;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-import ru.urfu.cake.dlq.DeadLetterPublisher;
-import ru.urfu.cake.handler.LoggingDeserializationExceptionHandler;
-import ru.urfu.cake.properties.KafkaStreamsProperties;
+import ru.urfu.cake.core.dlq.DeadLetterPublisher;
+import ru.urfu.cake.core.handler.LoggingDeserializationExceptionHandler;
+import ru.urfu.cake.core.properties.KafkaStreamsProperties;
 
 import java.util.HashMap;
 import java.util.Map;
