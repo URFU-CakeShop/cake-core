@@ -56,10 +56,10 @@ subprojects {
         }
         repositories {
             maven {
-                name = "GitHubPackages"
+                name = "github"
                 url = uri("https://maven.pkg.github.com/URFU-CakeShop/cake-core")
                 credentials {
-                    username = urfu-cakeshop
+                    username = "urfu-cakeshop"
                     password = System.getenv("GHCR_TOKEN")
                 }
             }
