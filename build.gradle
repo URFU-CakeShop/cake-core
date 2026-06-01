@@ -20,6 +20,7 @@ allprojects {
 
 subprojects {
     apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'org.springframework.boot'
 
@@ -44,6 +45,24 @@ subprojects {
     tasks.withType(Test).tap {
         configureEach {
             useJUnitPlatform()
+        }
+    }
+
+    publishing {
+        publications {
+            gpr(MavenPublication) {
+                from(components.java)
+            }
+        }
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/URFU-CakeShop/cake-core")
+                credentials {
+                    username = urfu-cakeshop
+                    password = System.getenv("GHCR_TOKEN")
+                }
+            }
         }
     }
 }
