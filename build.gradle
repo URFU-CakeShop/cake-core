@@ -46,8 +46,16 @@ tasks.withType(Test).configureEach {
 
 publishing {
     publications {
-        gpr(MavenPublication) {
+        create("gpr", MavenPublication) {
             from(components.java)
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
         }
     }
     repositories {
