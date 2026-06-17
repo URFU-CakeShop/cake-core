@@ -34,6 +34,10 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind'
 
     api 'org.springframework.kafka:spring-kafka'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.apache.kafka:kafka-streams-test-utils'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -42,12 +46,14 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.withType(Test).configureEach {
     useJUnitPlatform()
+    systemProperty 'integration', System.getProperty('integration')
 }
 
 publishing {
     publications {
         create("gpr", MavenPublication) {
             from(components.java)
+            artifactId = 'cake-core'
             versionMapping {
                 usage('java-api') {
                     fromResolutionOf('runtimeClasspath')
